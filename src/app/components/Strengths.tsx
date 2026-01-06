@@ -1,5 +1,5 @@
 export default function Strengths() {
-    const strengths = [
+  const strengths = [
     "Back-end development using Python and Java, with focus on clean and maintainable code",
     "Designing and integrating RESTful APIs for practical applications",
     "Strong foundation in Object-Oriented Programming (OOP) principles",
@@ -16,7 +16,7 @@ export default function Strengths() {
           <span className="block w-16 h-1 bg-[var(--accent)] rounded-full mt-2"></span>
         </h2>
 
-        <div className="bg-[var(--card-bg)] p-8 rounded-2xl shadow-md">
+        <div className="bg-[var(--card-bg)] p-6 md:p-10 rounded-2xl shadow-md">
           <ul className="space-y-3 text-[var(--secondary)] list-disc list-inside">
             {strengths.map((strength, index) => (
               <li key={index}>{strength}</li>

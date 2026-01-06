@@ -7,11 +7,11 @@
 /* --- LIGHT MODE --- */
 :root {
   --background: #f8fafc;   /* slate-50 */
-  --foreground: #0f172a;   /* slate-900 */
+  --foreground: #16213b;   /* slate-900 */
   --primary: #2563eb;      /* blue-600 */
   --secondary: #64748b;    /* slate-500 */
   --card-bg: #ffffff;
-  --accent: #22c55e;       /* emerald-500 */
+  --accent: #2563eb;       /* emerald-500 */
 }
 
 /* --- DARK MODE --- */
@@ -22,7 +22,7 @@
     --primary: #3b82f6;    /* blue-500 */
     --secondary: #9ca3af;  /* gray-400 */
     --card-bg: #020617;
-    --accent: #22c55e;
+    --accent: #2563eb;  ;
   }
 }
 

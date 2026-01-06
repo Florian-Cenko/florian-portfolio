@@ -34,20 +34,18 @@ export default function Learning() {
           <span className="block w-16 h-1 bg-[var(--accent)] rounded-full mt-2"></span>
         </h2>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {courses.map((course) => (
             <div
               key={course.name}
-              className="flex items-center gap-4 p-6 bg-[var(--card-bg)] rounded-2xl border border-transparent shadow-md hover:shadow-xl hover:border-[var(--accent)] transition-all"
+              className="flex items-center gap-4 p-6 bg-[var(--card-bg)] rounded-2xl border border-transparent shadow-md hover:shadow-lg hover:-translate-y-1 transition-transform"
             >
               {course.icon}
               <div>
                 <h3 className="font-semibold text-[var(--foreground)] text-lg">
                   {course.name}
                 </h3>
-                <p className="text-[var(--secondary)] text-sm">
-                  {course.platform}
-                </p>
+                <p className="text-[var(--secondary)] text-sm">{course.platform}</p>
               </div>
             </div>
           ))}

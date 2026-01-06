@@ -25,34 +25,24 @@ export default function Contact() {
   return (
     <section id="contact" className="py-24 bg-[var(--background)]">
       <div className="max-w-6xl mx-auto px-6">
-        {/* ================= SECTION TITLE ================= */}
         <h2 className="text-3xl font-semibold mb-8 text-[var(--foreground)] relative inline-block">
           Contact
           <span className="block w-16 h-1 bg-[var(--accent)] rounded-full mt-2"></span>
         </h2>
 
-        {/* ================= CONTACT GRID ================= */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {contacts.map((contact) => (
             <a
               key={contact.name}
               href={contact.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 p-6 bg-[var(--card-bg)]
-                         rounded-2xl border border-transparent
-                         shadow-md hover:shadow-xl
-                         hover:border-[var(--accent)]
-                         transition-all"
+              className="flex items-center gap-4 p-6 bg-[var(--card-bg)] rounded-2xl shadow-md hover:shadow-lg hover:-translate-y-1 transition-transform border border-transparent"
             >
               {contact.icon}
               <div>
-                <h3 className="font-semibold text-[var(--foreground)] text-lg">
-                  {contact.name}
-                </h3>
-                <p className="text-[var(--secondary)] text-sm">
-                  {contact.label}
-                </p>
+                <h3 className="font-semibold text-[var(--foreground)] text-lg">{contact.name}</h3>
+                <p className="text-[var(--secondary)] text-sm">{contact.label}</p>
               </div>
             </a>
           ))}

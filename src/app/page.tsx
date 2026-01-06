@@ -14,7 +14,7 @@ import SectionWrapper from "./components/SectionWrapper";
 export default function Portfolio() {
   return (
     <main className="bg-[var(--background)] text-[var(--foreground)] min-h-screen">
-      
+     
         <Hero />
       <SectionWrapper>
         <About />
