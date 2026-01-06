@@ -19,18 +19,30 @@ export default function Hero() {
 
   return (
     <section className="min-h-screen flex flex-col md:flex-row items-start md:items-center justify-between px-6 md:px-20 gap-10 pb-24 pt-16 md:pt-0 max-w-7xl mx-auto">
-
-      {/* ================= TEXT COLUMN ================= */}
-      <div className="flex-1 flex flex-col items-start text-left gap-4">
+      
+      {/* ================= LEFT COLUMN (TEXT + MOBILE IMAGE) ================= */}
+      <div className="flex-1 flex flex-col items-start text-left gap-4 w-full">
         
-        {/* Headline */}
-        <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
-          Hi, I'm <span className="text-[var(--primary)]">{typedName}</span>
-          <span className="border-r-2 border-[var(--primary)] animate-pulse ml-1"></span>
-        </h1>
+        {/* Mobile Header: Name and Image side by side */}
+        <div className="flex flex-row items-center justify-between w-full md:block">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight">
+            Hi, I'm <br className="md:hidden" />
+            <span className="text-[var(--primary)]">{typedName}</span>
+            <span className="border-r-2 border-[var(--primary)] animate-pulse ml-1"></span>
+          </h1>
+
+          {/* Image only visible on Mobile (next to name) */}
+          <div className="md:hidden w-20 h-20 sm:w-28 sm:h-28 rounded-full overflow-hidden shadow-lg border-2 border-[var(--accent)]/30 flex-shrink-0 ml-4">
+            <img
+              src="/profile.jpg"
+              alt="Florian Cenko"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
 
         {/* Subline */}
-        <p className="text-sm tracking-widest text-[var(--accent)] font-semibold mt-2 uppercase">
+        <p className="text-xs sm:text-sm tracking-widest text-[var(--accent)] font-semibold mt-2 uppercase">
           Software Engineering · Data · AI
         </p>
 
@@ -40,31 +52,30 @@ export default function Hero() {
         </p>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row mt-6 gap-4">
+        <div className="flex flex-col sm:flex-row mt-6 gap-4 w-full sm:w-auto">
           <a
             href="#projects"
-            className="px-8 py-3 bg-[var(--primary)] text-white font-semibold rounded-lg shadow hover:scale-105 hover:shadow-xl transition-transform"
+            className="px-8 py-3 bg-[var(--primary)] text-white text-center font-semibold rounded-lg shadow hover:scale-105 hover:shadow-xl transition-transform"
           >
             View Projects
           </a>
 
           <a
             href="#contact"
-            className="px-8 py-3 border border-[var(--primary)] text-[var(--primary)] font-semibold rounded-lg hover:bg-[var(--primary)] hover:text-white transition-colors"
+            className="px-8 py-3 border border-[var(--primary)] text-[var(--primary)] text-center font-semibold rounded-lg hover:bg-[var(--primary)] hover:text-white transition-colors"
           >
             Contact Me
           </a>
         </div>
       </div>
 
-      {/* ================= IMAGE COLUMN ================= */}
-      <div className="flex-1 flex justify-center md:justify-end mt-10 md:mt-0">
-        <div className="relative w-44 h-44 sm:w-56 sm:h-56 md:w-72 md:h-72 rounded-full overflow-hidden shadow-xl">
-          <div className="absolute inset-0 rounded-full ring-4 ring-[var(--accent)]/30"></div>
+      {/* ================= RIGHT COLUMN (DESKTOP IMAGE) ================= */}
+      <div className="hidden md:flex flex-1 justify-end">
+        <div className="relative w-72 h-72 rounded-full overflow-hidden shadow-xl border-4 border-[var(--accent)]/30">
           <img
             src="/profile.jpg"
             alt="Florian Cenko"
-            className="w-full h-full object-cover relative z-10 rounded-full"
+            className="w-full h-full object-cover relative z-10"
           />
         </div>
       </div>
