@@ -18,23 +18,23 @@ export default function Hero() {
   }, [index]);
 
   return (
-    <section className="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 md:px-20 gap-10 pb-24 pt-16 md:pt-0 max-w-7xl mx-auto">
+    <section className="min-h-screen flex flex-col md:flex-row items-center md:items-center justify-center px-6 md:px-20 gap-10 pb-24 pt-16 md:pt-0 max-w-7xl mx-auto">
 
-      {/* ================= LEFT: TEXT ================= */}
-      <div className="flex-1 flex flex-col items-start text-left gap-4">
+      {/* ================= LEFT COLUMN ================= */}
+      <div className="flex-1 flex flex-col items-start text-left gap-4 order-2 md:order-1">
         
-        {/* Desktop subline */}
-        <p className="text-sm tracking-widest text-[var(--accent)] font-semibold uppercase hidden md:block">
-          Software Engineering · Data · AI
-        </p>
-
         {/* Headline */}
         <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
           Hi, I'm <span className="text-[var(--primary)]">{typedName}</span>
           <span className="border-r-2 border-[var(--primary)] animate-pulse ml-1"></span>
         </h1>
 
-        {/* Mobile subline */}
+        {/* Subline: Desktop */}
+        <p className="text-sm tracking-widest text-[var(--accent)] font-semibold uppercase mt-2 hidden md:block">
+          Software Engineering · Data · AI
+        </p>
+
+        {/* Subline: Mobile */}
         <p className="text-sm tracking-widest text-[var(--accent)] font-semibold mt-2 md:hidden">
           Software Engineering · Data · AI
         </p>
@@ -62,8 +62,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* ================= RIGHT: IMAGE ================= */}
-      <div className="flex-1 flex justify-center md:justify-end mt-10 md:mt-0">
+      {/* ================= RIGHT COLUMN (IMAGE) ================= */}
+      <div className="flex-1 flex justify-center md:justify-end mt-10 md:mt-0 order-1 md:order-2">
         <div className="relative w-44 h-44 sm:w-56 sm:h-56 md:w-72 md:h-72 rounded-full overflow-hidden shadow-xl">
           <div className="absolute inset-0 rounded-full ring-4 ring-[var(--accent)]/30"></div>
           <img
