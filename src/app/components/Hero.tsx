@@ -18,14 +18,16 @@ export default function Hero() {
   }, [index]);
 
   return (
-    // ΑΛΛΑΓΗ: pt-32 για να κατέβει από πάνω και justify-center για κεντράρισμα στο κινητό
-    <section className="min-h-screen flex flex-col md:flex-row items-start md:items-center justify-center md:justify-between px-6 md:px-20 gap-12 pb-24 pt-32 md:pt-0 max-w-7xl mx-auto">
+    // Χρησιμοποιούμε pt-[15vh] (15% του ύψους της οθόνης) για να σπρώξουμε το περιεχόμενο κάτω
+    // και justify-start αντί για center για να ελέγχουμε εμείς ακριβώς την απόσταση από πάνω.
+    <section className="min-h-screen flex flex-col md:flex-row items-start md:items-center justify-start md:justify-between px-6 md:px-20 gap-10 pb-24 pt-[15vh] md:pt-0 max-w-7xl mx-auto">
       
       {/* ================= LEFT COLUMN (TEXT + MOBILE IMAGE) ================= */}
-      <div className="flex-1 flex flex-col items-start text-left gap-4 w-full">
+      <div className="flex-1 flex flex-col items-start text-left gap-6 w-full">
         
-        {/* Container με padding 1em (p-4) και flex middle */}
-        <div className="flex items-center justify-between w-full p-4 md:p-0 md:block bg-black/5 md:bg-transparent rounded-2xl">
+        {/* MOBILE CONTAINER: Padding 1em (p-4), Flex Middle, και ένα απαλό background για να φαίνεται το container */}
+        <div className="flex items-center justify-between w-full p-4 md:p-0 md:block bg-[var(--accent)]/5 md:bg-transparent rounded-2xl border border-[var(--accent)]/10 md:border-none">
+          
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight">
             Hi, I'm <br className="md:hidden" />
             <span className="text-[var(--primary)]">{typedName}</span>
@@ -42,9 +44,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Υπόλοιπο κείμενο με padding για στοίχιση στο κινητό */}
-        <div className="px-4 md:px-0 w-full">
-          <p className="text-xs sm:text-sm tracking-widest text-[var(--accent)] font-semibold mt-2 uppercase">
+        {/* Υπόλοιπο κείμενο - Προσθήκη padding-left/right για να στοιχίζεται με το παραπάνω container */}
+        <div className="px-4 md:px-0">
+          <p className="text-xs sm:text-sm tracking-widest text-[var(--accent)] font-semibold uppercase">
             Software Engineering · Data · AI
           </p>
 
@@ -55,7 +57,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row mt-8 gap-4 w-full sm:w-auto">
             <a
               href="#projects"
-              className="px-8 py-3 bg-[var(--primary)] text-white text-center font-semibold rounded-lg shadow hover:scale-105 hover:shadow-xl transition-transform"
+              className="px-8 py-3 bg-[var(--primary)] text-white text-center font-semibold rounded-lg shadow hover:scale-105 transition-transform"
             >
               View Projects
             </a>
